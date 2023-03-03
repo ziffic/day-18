@@ -1,7 +1,7 @@
 import random
-from turtle import Turtle, Screen
+import turtle as t
 
-tim = Turtle()
+tim = t.Turtle()
 tim.shape("arrow")
 # tim.color("royal blue")
 
@@ -17,7 +17,7 @@ tim.shape("arrow")
 
 
 # ------------------------------------------------------
-# My Solution
+# My Solution - Angles Challenge
 # ------------------------------------------------------
 # tim.color("royal blue")
 # for _ in range(4):
@@ -60,21 +60,94 @@ tim.shape("arrow")
 #     tim.right(180 - 144)
 
 # ------------------------------------------------------
-# Instructor Solution
+# Instructor Solution - Angles Challenge
 # ------------------------------------------------------
-colors = ["coral", "maroon", "dark slate blue", "light green", "yellow", "orchid", "red", "royal blue"]
-tim.speed(2)
-
-def draw_shape(num_sides):
-    for _ in range(num_sides):
-        angle = 360 / num_sides
-        tim.forward(100)
-        tim.right(angle)
+# colors = ["coral", "maroon", "dark slate blue", "light green", "yellow", "orchid", "red", "royal blue"]
+# tim.speed(2)
 
 
-for i in range(3, 11):
-    tim.color(random.choice(colors))
-    draw_shape(i)
+# def draw_shape(num_sides):
+#     for _ in range(num_sides):
+#         angle = 360 / num_sides
+#         tim.forward(100)
+#         tim.right(angle)
+#
+#
+# for i in range(3, 11):
+#     tim.color(random.choice(colors))
+#     draw_shape(i)
 
-screen = Screen()
+
+# ------------------------------------------------------
+# My Solution - Random Walk Challenge
+# ------------------------------------------------------
+# colors = ["coral", "maroon", "dark slate blue", "light green", "yellow", "orchid", "red", "royal blue"]
+# distance = 20
+# rand_num = 0
+#
+# tim.pensize(10)
+# for _ in range(100):
+#     tim.color(random.choice(colors))
+#     rand_num = random.randint(1, 3)
+#     if rand_num == 1:
+#         tim.forward(distance)
+#     elif rand_num == 2:
+#         tim.right(90)
+#     elif rand_num == 3:
+#         tim.left(90)
+#     # else:
+#     #     tim.backward(distance)
+
+# ------------------------------------------------------
+# Instructor Solution - Random Walk Challenge
+# ------------------------------------------------------
+# colors = ["coral", "maroon", "dark slate blue", "light green", "yellow", "orchid", "red", "royal blue"]
+# directions = [0, 90, 180, 270]
+#
+# tim.pensize(15)
+# tim.speed("fastest")
+# for _ in range(200):
+#     tim.color(random.choice(colors))
+#     tim.forward(30)
+#     tim.setheading(random.choice(directions))
+
+
+# ------------------------------------------------------
+# My Solution - Random RGBs
+# ------------------------------------------------------
+t.colormode(255)
+
+
+# def random_color():
+#     r = random.randint(0, 255)
+#     g = random.randint(0, 255)
+#     b = random.randint(0, 255)
+#     return r, g, b
+#
+#
+# directions = [0, 90, 180, 270]
+# tim.pensize(15)
+# tim.speed("fastest")
+#
+# for _ in range(200):
+#     tim.pencolor(random_color())
+#     tim.forward(30)
+#     tim.setheading(random.choice(directions))
+
+# ------------------------------------------------------
+# My Solution - Spirograph RGBs
+# ------------------------------------------------------
+t.colormode(255)
+
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return r, g, b
+
+
+
+
+screen = t.Screen()
 screen.exitonclick()
