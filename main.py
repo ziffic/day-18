@@ -115,7 +115,7 @@ tim.shape("arrow")
 # ------------------------------------------------------
 # My Solution - Random RGBs
 # ------------------------------------------------------
-t.colormode(255)
+# t.colormode(255)
 
 
 # def random_color():
@@ -135,9 +135,30 @@ t.colormode(255)
 #     tim.setheading(random.choice(directions))
 
 # ------------------------------------------------------
-# My Solution - Spirograph RGBs
+# My Solution - Spirograph
+# ------------------------------------------------------
+# t.colormode(255)
+# tim.speed("fastest")
+#
+#
+# def random_color():
+#     r = random.randint(0, 255)
+#     g = random.randint(0, 255)
+#     b = random.randint(0, 255)
+#     return r, g, b
+#
+#
+# for i in range(1, 73):
+#     tim.pencolor(random_color())
+#     tim.circle(100)
+#     tim.right(5)
+
+
+# ------------------------------------------------------
+# Instructor Solution - Spirograph
 # ------------------------------------------------------
 t.colormode(255)
+tim.speed("fastest")
 
 
 def random_color():
@@ -147,7 +168,14 @@ def random_color():
     return r, g, b
 
 
+def draw_spirograph(size_of_gap):
+    for _ in range(int(360 / size_of_gap)):
+        tim.pencolor(random_color())
+        tim.circle(100)
+        tim.setheading(tim.heading() + size_of_gap)
 
+
+draw_spirograph(5)
 
 screen = t.Screen()
 screen.exitonclick()
